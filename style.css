@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 15px;
+}
+
+.top-bar p {
+    float: right;
+}
+
+.top-bar div {
+    float: left;
+}
