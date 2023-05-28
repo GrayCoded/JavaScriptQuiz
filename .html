@@ -5,31 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <title>JavaScriptQuiz</title>
 </head>
 
 <body>
-    <div class="container">
+
+    <main class="container">
         <div class="top-bar">
-            <button id="High-Scores">High Scores</button>
-            <p id="timer"></p>
-        </div>
-        <div class="title-container">
-            <header class="start-page"></header>
-                <p>Welcome to GreyCoded's JavaScript Quiz.</p>
-                <p>Press Start to begin!</p>
-                <button id="start">Start</button>
-        </div>
-        <div class="quiz">
-            <div class="question">
-                <div class="answers">
-                    
-                </div>
-            </div>
+            <h3 id="high-score">High Scores</h3>
+            <h3 id="timer"></h3>
         </div>
 
+        <section>
+            <div class="title-container">
+                <header class="start-page"></header>
+                    <h1>JavaScript Quiz</h1>
+                    <p>Welcome to GreyCoded's JavaScript Quiz.<br> Test your knowledge and see how you compare.</p>
+                    <p>Press Start to begin!</p>
+                    <button id="start">Start</button>
+            </div>
+        </section>
+            
+        <section class="quiz">
+            <div class="panel-titlt">
+                <div class="question">
+                    <div class="answers">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="high-score">
+            <h1 class="panel-title">HIGH SCORE</h1>
             <form>
                 <input type="text" id="initials"> 
                 <input type="text" id="initials">
@@ -40,15 +48,14 @@
             </form>
         </section>
         <section>
-            <h1>Congraulations!</h1>
+            <h1 class="panel-title">Congraulations!</h1>
             <p>Enter Your Initials Here.</p>
-            <
+            <form input="text" id="your-score"></form>
             <textarea id="username"></textarea>
+            <button id="submit">Submit</button>
         </section>
-
-       
-    </div>
-                    <script src="script.js"> </script>
+    </main>
+                    <script src="assets/script.js"> </script>
 </body>
 
 </html>

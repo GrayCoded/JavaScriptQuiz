@@ -1,7 +1,15 @@
-var timerEL = document.querySelector('.timer')
+var usernameL = 3;
+var choice = [];
+
+var timerEL = document.querySelector('#timer')
+var questionEl = document.querySelector('#question')
+var answerEl = document.querySelector('#answer')
+var highScoreEl = document.querySelector('#high-score')
+var initialsEl = document.querySelector('#Initials')
+var titleEl = document.querySelector('#h1')
 
 
-var question = [ {
+var questionStr = [ {
 
     question:'JavaScript is a ________ language?',
     answers:('Data','Love','Binary','simple'),
@@ -30,13 +38,16 @@ var question = [ {
 }   
 ]
 
-question = getRandomQuestion;
-
-function getRandomQuestion() {
-    var randomIndex = Math.floor(Math.random() * questions.length);
-    return questions[randomIndex];
+function generateQuestion() {
+    var questionStr =('');
+    for(var i =0; i < questionStr) 
+    var randomizer = Math.floor(Math.random() * questions.length);
+    questionStr = questionStr + choice[randomizer]
+    return questionStr;
 
 }
+
+
 
 var timeLeft = 100;
 
@@ -55,21 +66,3 @@ function setTime() {
 
 
 setTime();
-
-var choice = []
-
-function choice( {
-    var answers = selectedAnswer(function() {
-        timeLeft--;
-        
-
-        if(answer === correctAnswer);
-        timeLeft-5;
-        prompt("correct");
-
-        else if(answer !== correctAnswer);
-        timeLeft-15;
-        prompt("wrong");
-
-    })
-})
