@@ -4,14 +4,23 @@
     box-sizing: border-box;
 }
 
+.title {
+    text-align: center;
+}
+
+button {
+    border-radius: 7px;
+}
+
 .container {
     padding: 15px;
 }
 
-.top-bar .timer {
+.wrapper .currentTime {
     float: right;
 }
 
-.top-bar .high-score {
+.top-bar .highscore {
     float: left;
 }
+

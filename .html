@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css" />
-    <title>JavaScriptQuiz</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/style.css" />
 
+        <title>JavaScriptQuiz</title>
+    </head>
+</html>
 <body>
 
-    <main class="container">
-        <div class="top-bar">
-            <h3 id="high-score">High Scores</h3>
-            <h3 id="timer"></h3>
+    <div id="wrapper">
+        <div>
+            <h3 ><a href="highScoresDiv">HIGHSCORES</a></h3>
         </div>
-
-        <section>
-            <div class="title-container">
-                <header class="start-page"></header>
-                    <h1>JavaScript Quiz</h1>
-                    <p>Welcome to GreyCoded's JavaScript Quiz.<br> Test your knowledge and see how you compare.</p>
-                    <p>Press Start to begin!</p>
-                    <button id="start">Start</button>
-            </div>
-        </section>
-            
-        <section class="quiz">
-            <div class="panel-titlt">
-                <div class="question">
-                    <div class="answers">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="high-score">
-            <h1 class="panel-title">HIGH SCORE</h1>
+        <div>
+            <h3 id="currentTime"></h3>
+        </div>
+        <div id="questionsDiv">
+            <h1 class="title">JavaScript Quiz</h1>
+            <p> Welcome to the GreyCoded JavaScript coding quiz. 
+                We have 100 seconds on the clock. Every right 
+                answer will subtract 5 seconds and every wrong one will 
+                subtract 15 seconds. Good Luck challenger.
+            </p>
+            <button id="start">Start</button>
+        </div>
+        <div id="highScoresDiv">
+            <h1 class="title">HIGHSCORES</h1>
+            <p>See where you rank.</p>
+            <ul id="highScore"></ul>
+            <button id="return">Return</button>
+            <button id="wipe">Try Again</button>
+        </div>
+        <div id="quizfinish">
+            <h1 class="title">Quiz Complete!</h1>
+            <p></p>
             <form>
-                <input type="text" id="initials"> 
-                <input type="text" id="initials">
-                <input type="text" id="initials">
-                <input type="text" id="initials">
-                <input type="text" id="initials">
-                <input type="text" id="initials">
+                <label for="initials">Your Initials</label><br>
+                <input type="text" id="initials" name="initials"><br>
+                <label for="score">Score</label>
+                <input text="text" id="score" name="score"><br>
             </form>
-        </section>
-        <section>
-            <h1 class="panel-title">Congraulations!</h1>
-            <p>Enter Your Initials Here.</p>
-            <form input="text" id="your-score"></form>
-            <textarea id="username"></textarea>
             <button id="submit">Submit</button>
-        </section>
-    </main>
+        </div>
+        
+    </div>
+   
                     <script src="assets/script.js"> </script>
 </body>
 
-</html>
