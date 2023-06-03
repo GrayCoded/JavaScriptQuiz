@@ -1,26 +1,7 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
-.title {
-    text-align: center;
+.main {
+    margins:200px;
 }
-
-button {
-    border-radius: 7px;
-}
-
-.container {
-    padding: 15px;
-}
-
-.wrapper .currentTime {
-    float: right;
-}
-
-.top-bar .highscore {
-    float: left;
-}
-
