@@ -18,8 +18,8 @@
                 <h3 class="ms-auto" id="countdown">TIME: <span>50</span></h3>
             </header>
         </div>
-        <div class="min-vh-100 justify-content-center ">
-            <div id="main" class="container my-auto text-center">
+        <div id="main" class="min-vh-100 justify-content-center" style="display:block">
+            <div class="container my-auto text-center">
                 <div class="container col-6 my-auto">
                         <div>
                             <h1 class="title">JavaScript Quiz</h1>
@@ -32,21 +32,18 @@
                         <button id="start" class="btn btn-primary">Start</button>
                 </div>
             </div>
-            <div class="container  my-auto col-6">
-                <form id="quiz-div">
+            <div id="quiz-div" class="container my-auto col-6" style="display:none">
+                <form>
                     <h1> Quiz</h1>
                     <div class="list-group ">
-                        <input type="text" class="form-control" id="question-input" placeholder="question">
-                        <input type="text" class="form-control" id="answer-input" placeholder="answer 1">
-                        <input type="text" class="form-control" id="answer-input" placeholder="answer 2">
-                        <input type="text" class="form-control" id="answer-input" placeholder="answer 3">
-                        <input type="text" class="form-control" id="answer-input" placeholder="answer 3">
+                        <input type="text" class="form-control" id="question-select" placeholder="Question">
+                        <input type="text" class="form-control" id="answer-select" placeholder="Answer">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
-            <div class="container my-auto col-6">
-                <form id="highscore-div">
+            <div id="highscore-div" class="container my-auto col-6" style="display:none">
+                <form>
                     <h1>HIGHSCORES</h1>
                     <div class="row">
                         <div class="col">
@@ -77,8 +74,8 @@
                     <button id="retry" class="btn btn-primary">TRY AGAIN</button>
                 </form>
             </div>
-            <div class="container my-auto col-6">
-                <form id="quiz-finish">
+            <div id="quiz-finish"class="container my-auto col-6" style="display:none">
+                <form>
                     <h1>Quiz Finished!</h1>
                     <div class="form-group">
                         <label for="initials-input">Your Initials:</label>
