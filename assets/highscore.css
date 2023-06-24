@@ -1,0 +1,55 @@
+
+body {
+    background-image: url(./image/goodwood\ racing\ logo\ 2.jpeg);
+    background-position: center;
+    overflow: hidden;
+    
+ }
+ 
+ header {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+ }
+ 
+ h3 {
+    background-color: aliceblue;
+    border: 2px solid navy;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+ }
+ 
+ main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+ }
+ 
+ .highscore-page {
+    border: 6px solid blue;
+    border-radius: 8px;
+    margin-top: 150px;
+    width: 600px;
+    height: auto;
+    background-color: white;
+ }
+
+ table {
+    display: flex;
+    justify-content: center;
+   
+ }
+
+ td {
+    width: 50px;
+    padding: 10px;
+    border: 2px solid black;
+ }
+ 
+p {
+    margin: 25px;
+
+}

@@ -5,31 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" text="text/css" href="./assets/style.css">
-    <title>JavaScriptQuiz</title>
+    <title>Performance Automotive Quiz</title>
 </head>
 
 <body>
     <header class="container">
-        <h3><a href="high-score">HIGH SCORES</a></h3>
+        <h3><a href="./highscore.html">WINNERS LANE</a></h3>
         <h3 id="countdown">TIME: <span>50</span></h3>
     </header>
     <main>
 
         <div class="start-page">
             <div>
-                <h1 class="title">JavaScript Quiz</h1>
+                <h1 class="title">Performance Automotive Quiz</h1>
             </div>
-            <p> Welcome to the GreyCoded JavaScript coding quiz.
-                We have 50 seconds on the clock. Every right
+            <p> Welcome to the GreyCoded Performance Automotive Quiz.
+                You have 50 seconds to see if you know your stuff. Every right
                 answer will subtract 0 seconds and every wrong one will
-                subtract 10 seconds. Good Luck challenger.
+                subtract 10 seconds. Good luck contestant.
             </p>
             <button id="start" >Start</button>
         </div>
 
-        <div class="quiz">
+        <div class="quiz hide">
             <h1>Quiz</h1>
             <h4 id="question"></h4>
             <button class="answer"></button>
@@ -37,7 +36,7 @@
             <button class="answer"></button>
             <button class="answer"></button>
         </div>
-        <div class="finish">
+        <div class="finish hide">
             <form>
                 <label>User Intials</label>
                 <p text="input" class="user-initails" placeholder="AAA"></p>
