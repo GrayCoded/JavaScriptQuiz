@@ -1,19 +1,18 @@
-
-var questionIndex = 0;
-var score = 0;
-var penalty = 10;
-var timeInitial = 50;
-var userScores = [];
-var answerBtns = [];
-var timeEl = $('#countdown');
-var questionsEl = $('#question');
-var anwersEl = $('.answer');
-var startEl = $('.start-page');  
-var finishEl = $('.finish'); 
-var userInfo = $('#user-input');
-var quizEl = $('.quiz');  
-var submitBtnEl = $('submit-btn');
-var startBtn = $('#start');  
+$(document).ready(function() {
+    var questionIndex = 0;
+    var score = 0;
+    var penalty = 10;
+    var timeInitial = 50;
+    var userScores = [];
+    var timeEl = $('#countdown');
+    var questionsEl = $('#question');
+    var answerBtns = $('.answer');
+    var startEl = $('.start-page');
+    var finishEl = $('.finish');
+    var userInfo = $('#user-info');
+    var quizEl = $('.quiz');
+    var submitBtnEl = $('#submit');
+    var startBtn = $('#start');
 
 
 var questionArr = [
@@ -100,61 +99,112 @@ var questionArr = [
         answer4: 'Great Wall Motors',
         correctA: 'GAC Group',
     },
-]
+    ];
 
 function genQuiz() {
     if (questionIndex >= questionArr.length) {
-        finishQuiz();
-        return;
+      finishQuiz();
+      return;
     }
+  
+    randomizeArr(questionArr);
 
-    var currentQuestion = questionArr[questionIndex];
-    questionsEl.text(currentQuestion.Question);
+  var currentQuestion = questionArr[questionIndex];
+  questionsEl.text(currentQuestion.Question);
 
-    answerBtns[0].textContent = currentQuestion.answer1;
-    answerBtns[1].textContent = currentQuestion.answer2;
-    answerBtns[2].textContent = currentQuestion.answer3;
-    answerBtns[3].textContent = currentQuestion.answer4;
-}
-
-function validate(answer) {
-    var currentQuestion = questionArr[questionIndex];
-    if (answer === currentQuestion.correctA) {
-        score += 10;
-    } else {
-        timeInitial -= penalty;
-        if (timeInitial < 0) {
-            timeInitial = 0;
-        }
-        timeEl.text('TIME: ' + timeInitial)
-    }
-    questionIndex++;
-    genQuiz();
-}
-
-function finishQuiz() {
-    quizEl.hide();
-    finishEl.show();
-    userInfo.val('');
-    $('.user-score').text(score);
+  for (var i = 0; i < answerBtns.length; i++) {
+    answerBtns[i].textContent = currentQuestion['answer' + (i + 1)];
+  }
 }
   
-$('#start').click(function() {
-    qFormEl.show();
-    mainEl.hide();
-    startBtn.hide();
-    generateQuestion();
-
-});
-
-$('.quiz').click(function (event) {
-    var answer = event.target.value;
-    if (answer != null) {
-        validate(answer);
+  function randomizeArr(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
+  }
+  
+  function validate(answer) {
+    var currentQuestion = questionArr[questionIndex];
+    if (answer === currentQuestion.correctA) {
+      score += 10;
+    } else {
+      timeInitial -= penalty;
+      if (timeInitial < 0) {
+        timeInitial = 0;
+      }
+      timeEl.text('TIME: ' + timeInitial);
+    }
+  
+    clearInterval(countdownInterval);
+    questionIndex++;
+    if (questionIndex < questionArr.length) {
+      genQuiz();
+      startTimer();
+    } else {
+      finishQuiz();
+    }
+  }
+  
+  function startTimer() {
+    timeEl.text('TIME: ' + timeInitial);
+  
+    countdownInterval = setInterval(function () {
+      timeInitial--;
+  
+      if (timeInitial < 0) {
+        finishQuiz();
+        clearInterval(countdownInterval);
+      } else {
+        timeEl.text('TIME: ' + timeInitial);
+      }
+    }, 1000);
+  }
+  
+  function finishQuiz() {
+    clearInterval(countdownInterval);
+    quizEl.hide();
+    finishEl.show();
+    $('.user-score').text(score);
+  }
+    
+  submitBtnEl.click(function(event) {
+    event.preventDefault();
+  
+    var userInitials = $('#user-initials').val();
+    var initialsErr = $('#error-response')
+    if (/^[A-Z]{3}$/.test(userInitials)) {
+
+    var userScore = score;
+    var highscores = getHighscoresFromLocalStorage();
+
+    highscores.push({
+    userInitials: userInitials,
+    userScore: userScore
+
+    });
+
+    saveHighscoresToLocalStorage(highscores);
+
+    window.location.href = 'highscore.html';
+    } else {
+        initialsErr.text('must be 3 letters and capital')
+    }
+  });
+    
+  
+  $('#start').click(function () {
+    startEl.hide();
+    quizEl.show();
+    startTimer();
+    genQuiz();
+  });
+  
+  answerBtns.on('click', function () {
+    var selectedAnswer = $(this).text();
+    validate(selectedAnswer);
+  });
+
 });
-
-
-
-
-

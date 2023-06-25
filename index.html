@@ -12,11 +12,11 @@
 <body>
     <header class="container">
         <h3><a href="./highscore.html">WINNERS LANE</a></h3>
-        <h3 id="countdown">TIME: <span>50</span></h3>
+        <h3 id="countdown">TIME:</h3>
     </header>
     <main>
 
-        <div class="start-page">
+        <div class="start-page show">
             <div>
                 <h1 class="title">Performance Automotive Quiz</h1>
             </div>
@@ -25,7 +25,7 @@
                 answer will subtract 0 seconds and every wrong one will
                 subtract 10 seconds. Good luck contestant.
             </p>
-            <button id="start" >Start</button>
+            <button id="start">Start</button>
         </div>
 
         <div class="quiz hide">
@@ -37,12 +37,17 @@
             <button class="answer"></button>
         </div>
         <div class="finish hide">
-            <form>
-                <label>User Intials</label>
-                <p text="input" class="user-initails" placeholder="AAA"></p>
-                <label>Your Score</label>
-                <p text="score" class="user-score" placeholder="50"></p>
-                <button type="submit">submit</button>
+            <h2>Congratulations</h2>
+            <form for="user-info">
+                <div class="user-row">
+                    <h2 class="subtitle">User Initials: </h2>
+                    <textarea type="text" class="user-initials"></textarea>
+                </div>
+                <div class="score-row">
+                    <h2 class="subtitle">Your Score: </h2>
+                    <p text="score" class="user-score"></p>
+                </div>
+                <button type="submit" id="submit">Submit</button>
             </form>
         </div>
     </main>

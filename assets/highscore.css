@@ -37,17 +37,7 @@ body {
     background-color: white;
  }
 
- table {
-    display: flex;
-    justify-content: center;
-   
- }
 
- td {
-    width: 50px;
-    padding: 10px;
-    border: 2px solid black;
- }
  
 p {
     margin: 25px;
