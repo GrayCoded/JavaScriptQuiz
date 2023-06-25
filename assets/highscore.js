@@ -1,33 +1,17 @@
-var tableEl = $('#highscoreTable');
+$(document).ready(function () {
+  
+  var savedInitials = localStorage.getItem('initials');
+  var savedScore = localStorage.getItem('score');
 
-function addHighscores(highscores) {
-  tableEl.empty();
+  
+  if (savedInitials && savedScore) {
+    var newRow = $('<tr>');
 
-  for (var i = 0; i < highscores.length; i++) {
-    var highscore = highscores[i];
-    var initials = highscore.userInitials;
-    var score = highscore.userScore;
+    var initialsTd = $('<td>').addClass('user-data').text(savedInitials);
+    var scoreTd = $('<td>').addClass('user-score').text(savedScore);
 
-    var row = $('<tr></tr>');
+    newRow.append(initialsTd, scoreTd);
 
-    var initialsCell = $('<td></td>').text(initials);
-    var scoreCell = $('<td></td>').text(score);
-
-    row.append(initialsCell, scoreCell);
-
-    tableEl.append(row);
+    $('#highscoreTable').append(newRow)
   }
-
-
-  var userInitials = localStorage.getItem('userInitials');
-  var userScore = localStorage.getItem('userScore');
-
-
-  var userRow = $('<tr></tr>');
-  var userInitialsCell = $('<td></td>').text(userInitials);
-  var userScoreCell = $('<td></td>').text(userScore);
-  userRow.append(userInitialsCell, userScoreCell);
-  tableEl.append(userRow);
-}
-
-addHighscores();
+});
