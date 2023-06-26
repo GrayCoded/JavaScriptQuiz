@@ -17,7 +17,7 @@ $(document).ready(function () {
   var questionArr = [
 
     {
-      Question: 'What makes a good Performance Vehicle?',
+      Question: 'What feature makes the best Performance Vehicle?',
       answer1: 'Speed',
       answer2: 'Handling',
       answer3: 'Braking',
@@ -34,16 +34,16 @@ $(document).ready(function () {
 
     },
     {
-      Question: 'Which brand id not owned by VW?',
+      Question: 'Which vehicle brand is not owned by VW?',
       answer1: 'AUDI',
       answer2: 'LAMBORGHINI',
       answer3: 'DELOREAN',
-      answer4: 'PROSCHE',
+      answer4: 'PORSCHE',
       correctA: 'DELOREAN',
     },
 
     {
-      Question: 'What is the only road that you can legaly drive 321 Kph',
+      Question: 'What is the only road that you can legally drive 321 KMPH?',
       answer1: 'Auobahn - Germany',
       answer2: 'The Autostrada - Poland',
       answer3: 'Sheikh Zayed Highway - India',
@@ -59,7 +59,7 @@ $(document).ready(function () {
       correctA: 'Availability',
     },
     {
-      Question: 'What supercar does not seat more then 2 people?',
+      Question: 'What supercar does not seat more than 2 people?',
       answer1: 'Rimac - Nevera',
       answer2: 'Koenigsegg - Gemera',
       answer3: 'Ferrari - FF',
@@ -83,7 +83,7 @@ $(document).ready(function () {
       correctA: '14',
     },
     {
-      Question: 'Why did Ferruccio Lamborghini decide to make the best gt car?',
+      Question: 'Why did Ferruccio Lamborghini decide to make the best GT car?',
       answer1: 'Got into an argument with Enzo Ferrari',
       answer2: 'There was a problem with his Ferrari',
       answer3: 'Enzo told him to stick to building tractors',
@@ -91,7 +91,7 @@ $(document).ready(function () {
       correctA: 'All of the Above',
     },
     {
-      Question: 'Which is not in the top 3 of the most anticipated brands from china?',
+      Question: 'Which is not in the top 3 of the most anticipated brands from China in 2023?',
       answer1: 'Changan Automobile',
       answer2: 'GAC Group',
       answer3: 'Geely Group',
